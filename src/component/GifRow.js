@@ -16,8 +16,8 @@ class CanvasRow extends Component {
         return (
           <canvas 
             key={val}
-            height={300}
-            width={300}
+            height={75}
+            width={75}
             className='miniPic' 
           />
         )})}

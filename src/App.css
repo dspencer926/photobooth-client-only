@@ -66,14 +66,14 @@ html, body, .App {
 }
 
 h1 {
-  margin: 55px 0;
-  font-size: 5em;
+  margin: 25px 0;
+  font-size: 3em;
 }
 
 /* _______________ MAIN SCREEN ______________ */
 
 #welcome {
-  width: 100%;
+  width: 1200px;
 }
 
 #screen {
@@ -87,8 +87,8 @@ h1 {
 
 .btn {
   display: flex;
-  height: 120px;
-  width: 120px;
+  height: 60px;
+  width: 60px;
   color: white;
   background-color: gray;
   margin: 0 10px;
@@ -168,7 +168,10 @@ video{
 }
 
 #gif-row {
-  width: 930px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
   margin: auto;
 }
 

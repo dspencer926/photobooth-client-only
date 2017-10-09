@@ -65,7 +65,7 @@ class ClickDrag extends Component {
     return false;   
   }
 
-  calc(x1, y1, x2, y2, xp, yp) {      // calculation to be used with withinBox
+  calc(x1, y1, x2, y2, xp, yp) {      // calculation to be used with withinBox()
     let A = -(y2 - y1);
     let B = x2 - x1;
     let C = - ((A * x1) + (B * y1));  
@@ -150,7 +150,7 @@ class ClickDrag extends Component {
     }
   }
 
-  async addPic(e) {                       // adds new prop when user clicks one
+  async addPic(e) {                       // adds new digital prop when user clicks one
     let zIndex = this.state.imageCount + 1;
     this.setState({
       imageCount: zIndex,
@@ -192,13 +192,13 @@ class ClickDrag extends Component {
       >
         <canvas 
           id='canv' 
-          height='900' 
-          width='900'
+          height='450' 
+          width='450'
           onMouseDown={(e) => this.handleMouseDown(e)}
           onMouseUp={this.handleMouseUp}
           onMouseMove={(e) => this.handleMouseMove(e)} />
           <div className='flex-row'>
-            <img id='pic' height='350' width='350' src={image} onClick={(e) => this.addPic(e)} />
+            <img id='pic' height='175' width='175' src={image} onClick={(e) => this.addPic(e)} />
             <Buttons 
               finalizePic={this.finalizePic}
               btnStatus={'digitalProps'}

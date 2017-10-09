@@ -57,7 +57,7 @@ class Screen extends Component {
     let canv = document.getElementById('canv').getContext('2d');
     let v = this.video;
     if (v.paused || v.ended) return false;
-    canv.drawImage(v, -150, 0, 1200, 900);
+    canv.drawImage(v, -75, 0, 600, 450);
     if (this.state.overlay) {
       let coords = this.state.imageCoords;
       let image = document.getElementById('logo');
@@ -164,8 +164,8 @@ class Screen extends Component {
       gifShot.createGIF({
         'images': gifArray,
         'interval': 0.3,
-        'gifWidth': 900,
-        'gifHeight': 900,
+        'gifWidth': 450,
+        'gifHeight': 450,
       },(obj) => {
         if(!obj.error) {
           this.setState({
@@ -232,11 +232,11 @@ class Screen extends Component {
                       width={this.state.videoDimensions.height}
                       height={this.state.videoDimensions.height}>
                     </canvas>
-                    <video id="video" width="1200" height="900" src={this.state.cameraStream} onPlay={this.videoToCanvas}></video>
+                    <video id="video" width="600" height="450" src={this.state.cameraStream} onPlay={this.videoToCanvas}></video>
                   </div>
               }
                 <div>
-                  <canvas id='mini-canv' width='300' height='300' style={{display: 'none'}} />
+                  <canvas id='mini-canv' width='75' height='75' style={{display: 'none'}} />
                 </div>
             </div>
         </div>

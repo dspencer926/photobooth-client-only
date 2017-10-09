@@ -2,7 +2,6 @@
   "name": "keshotgui",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
     "dotenv": "^4.0.0",
     "gifshot": "^0.3.2",

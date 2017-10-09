@@ -3,8 +3,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import sessionInfo from '../sessionInfo.json';
 import Screen from './Screen';
 import Buttons from './Buttons';
-import Disclaimer from './Disclaimer';
-import Survey from './Survey';
 import gifShot from 'gifshot';
 // const env = require('dotenv');  why is this here??
 
@@ -127,8 +125,6 @@ class MainView extends Component {
   render() {
     let view;
     let btnBox;
-    let disclaimer = this.state.showDisclaimer && 
-      <Disclaimer key={'disclaimer'} disclaimerSet={this.disclaimerSet}/>
 
     switch (this.state.media) {
       case null: 
@@ -162,16 +158,6 @@ class MainView extends Component {
     return (
       <div id='welcome' className='flex-col'>
         <h1>{this.state.header}</h1>
-        <ReactCSSTransitionGroup 
-          transitionName='test' 
-          transitionAppear={true}
-          transitionAppearTimeout={500}
-          transitionEnter={true}
-          transitionEnterTimeout={500} 
-          transitionLeave={true}
-          transitionLeaveTimeout={500}>
-            {disclaimer}
-        </ReactCSSTransitionGroup>
         {view}
         {btnBox}
       </div>

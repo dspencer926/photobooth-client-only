@@ -33,7 +33,7 @@ class DraggableImage {
     }
 
     this.buttonRadius = 25,
-    this.selected = false;
+    this.selected = true;
     this.radian = 0;      // actual radian to rotate (delta radian - rotate box radianOffset)
     this.apparentRadian = 0;
     this.radianForButtons = Math.atan2((this.height / 2), (this.width / 2));
@@ -96,7 +96,6 @@ class DraggableImage {
     let rotateLeft = this.constructorRotateBox.left;
     let rotateTop = this.constructorRotateBox.top;
     if (this.selected) {
-    ctx.drawImage(images.resize, resizeLeft, resizeTop, 50, 50);
       ctx.beginPath();
       ctx.lineWidth = 1;
       ctx.strokeStyle = '#FFFFFF';
@@ -116,10 +115,12 @@ class DraggableImage {
       ctx.stroke();
       ctx.fillStyle = 'red';
       ctx.fill();
+      ctx.drawImage(images.resize, resizeLeft + 5, resizeTop + 5, 40, 40);
+      ctx.drawImage(images.rotate, rotateLeft, rotateTop, 50, 50);
     }
     return constructionCanv;
   }
-
+  
   generate() {              // generates canvas to return to client
     this.ctx.clearRect(0, 0, this.canv.width, this.canv.height);
     let imageBox = this.construct();

@@ -1,13 +1,12 @@
 {
   "archive": "test",
-  "disclaimer": false,
   "survey": false,
   "termsConditions": false,
   "digitalProps": true,
   "email": true,
   "text": true,
-  "facebook": true,
-  "twitter": true,
+  "facebook": false,
+  "twitter": false,
   "print": true,
   "gif": true,
   "locationCode": "test"

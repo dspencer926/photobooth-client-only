@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import OptionBox from './OptionBox'
-import Disclaimer from './Disclaimer';
 import GifRow from './GifRow.js';  
 import gifShot from 'gifshot';
 import settings from '../settings.json';
@@ -217,22 +216,10 @@ class Screen extends Component {
   }
 
   render() {
-    let disclaimer = this.props.showDisclaimer && 
-    <Disclaimer key={'disclaimer'} disclaimerSet={this.disclaimerSet}/>
     return (
       <div id='screen'>
         <div className='flex-row'>
             <div id='video-or-gif'>
-              <ReactCSSTransitionGroup 
-              transitionName='dialogue' 
-              transitionAppear={true}
-              transitionAppearTimeout={500}
-              transitionEnter={true}
-              transitionEnterTimeout={500} 
-              transitionLeave={true}
-              transitionLeaveTimeout={500}>
-                {disclaimer}
-            </ReactCSSTransitionGroup>
               {this.state.gifConfirm 
                 ? <div id='gif-result'>
                     <img id='animated-gif' src={this.state.currentGif}></img>

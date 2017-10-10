@@ -11,9 +11,11 @@ class ShareView extends Component {
       sessionInfo: null,
       dialogueBox: false,
       keyboardShowing: false,
+      inputText: '',
     }
     this.dialogueSet = this.dialogueSet.bind(this);
     this.getInput = this.getInput.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     // this.submitData = this.submitData.bind(this);
   }
 
@@ -21,6 +23,14 @@ class ShareView extends Component {
     this.setState({
       sessionInfo: this.props.sessionInfo,
     }, () => console.log(this.state.sessionInfo))
+  }
+
+  handleInput(key) {
+    this.setState(prevState => { 
+      return {
+        inputText: prevState.inputText.concat(key),
+      }
+    })
   }
 
   dialogueSet(share) {
@@ -58,6 +68,7 @@ class ShareView extends Component {
         sessionInfo: session,
         dialogueBox: false,
         keyboardShowing: false,
+        inputText: '',
       })
     }
     
@@ -84,10 +95,15 @@ class ShareView extends Component {
   // }
 
   render() {
-    let keyboard = this.state.keyboardShowing && <Keyboard key={'keyboard'}/>;
+    let keyboard = this.state.keyboardShowing 
+      && <Keyboard 
+        key={'keyboard'}
+        handleInput={this.handleInput}
+      />;
     let dialogue = this.state.dialogueBox 
     && <DialogueBox 
         mode={this.state.dialogueBox} 
+        inputText={this.state.inputText}
         getInput={this.getInput}
       />
     return (

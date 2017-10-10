@@ -36,7 +36,7 @@ class ShareView extends Component {
   dialogueSet(share) {
     this.setState({
       dialogueBox: share,
-      keyboardShowing: (share !== 'Print') && true, 
+      // keyboardShowing: (share !== 'Print') && true, 
     })
     if (share === 'Print') {
       console.log(this.state.sessionInfo)
@@ -67,7 +67,7 @@ class ShareView extends Component {
       this.setState({
         sessionInfo: session,
         dialogueBox: false,
-        keyboardShowing: false,
+        // keyboardShowing: false,
         inputText: '',
       })
     }
@@ -95,11 +95,11 @@ class ShareView extends Component {
   // }
 
   render() {
-    let keyboard = this.state.keyboardShowing 
-      && <Keyboard 
-        key={'keyboard'}
-        handleInput={this.handleInput}
-      />;
+    // let keyboard = this.state.keyboardShowing 
+    //   && <Keyboard 
+    //     key={'keyboard'}
+    //     handleInput={this.handleInput}
+    //   />;
     let dialogue = this.state.dialogueBox 
     && <DialogueBox 
         mode={this.state.dialogueBox} 
@@ -136,7 +136,7 @@ class ShareView extends Component {
                 transitionEnterTimeout={500} 
                 transitionLeave={true}
                 transitionLeaveTimeout={500}>
-                  {keyboard}
+                  {/* {keyboard} */}
               </ReactCSSTransitionGroup>
       </div>
     );

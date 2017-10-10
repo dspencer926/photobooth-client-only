@@ -49,7 +49,7 @@ class DialogueBox extends Component {
           <div id='dialogue-box' className='pop-up'>
             <h1>{text.header}</h1>
             {this.props.mode !== 'Print' 
-            && <input type='text' onChange={(e) => {this.handleInput(e)}} value={this.props.inputText}/>}
+            && <input type='text' onChange={(e) => {this.handleInput(e)}} value={this.input}/>}
             <p style={{color: 'white'}}>{errorMsg}</p>
             <button className='btn' onClick={this.errorOrSubmit}>{text.button}</button>
           </div>
